@@ -1,0 +1,10 @@
+.listItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.listItemButton {
+  border-radius: 5px;
+  border: 1px solid black;
+}
