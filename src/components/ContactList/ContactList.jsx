@@ -1,4 +1,4 @@
-import Contact from './Contact';
+import Contact from '../Contact/Contact';
 import PropTypes from 'prop-types';
 import css from './ContactList.module.css';
 const ContactList = ({ filteredContacts, deleteContact }) => (
