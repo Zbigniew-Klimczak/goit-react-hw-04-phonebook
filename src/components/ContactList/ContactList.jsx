@@ -1,9 +1,10 @@
 import Contact from '../Contact/Contact';
 import PropTypes from 'prop-types';
 import css from './ContactList.module.css';
-const ContactList = ({ filteredContacts, deleteContact }) => (
+import { filteredContacts } from 'components/utils/ContactListFunc';
+const ContactList = ({ contacts, filter, deleteContact }) => (
   <ul className={css.contactList}>
-    {filteredContacts().map(contact => (
+    {filteredContacts(contacts, filter).map(contact => (
       <Contact
         key={contact.id}
         id={contact.id}
@@ -16,7 +17,8 @@ const ContactList = ({ filteredContacts, deleteContact }) => (
   </ul>
 );
 ContactList.propTypes = {
-  filteredContacts: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(PropTypes.object),
   deleteContact: PropTypes.func.isRequired,
+  filter: PropTypes.string,
 };
 export default ContactList;
